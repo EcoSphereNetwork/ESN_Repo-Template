@@ -70,31 +70,12 @@ Template for new repositories.
 ```
 Repo-Template/
 ├── docs                                    # Projektdokumentation
-│    │   ├── development                    # Erklärung development
-│    │   ├── cicd.md                        # Erklärung CI/CD
-│    │   └── contributing.md                # Erklärung contriubution
-│    ├── getting-started
-│    │   ├── configuration.md               # 
-│    │   ├── installation.md                #
-│    │   └── quickstart.md                  # Erklärung / Schnell Einstieg
-│    └── templates
-│        ├── bug_report.md                  # Vorlage für bug_report
-│        ├── documentation_update.md        # Vorlage für documentation_update
-│        ├── feature_request.md             # Vorlage für feature_request
-│        ├── issue_template.md              # Vorlage für issue_template
-│        └── pull_request_template.md       # Vorlage für Pull-Requests
-│   ├── index.md                            # Startseite der Dokumentation
-│   └── ...
 |
-├── include
-│   └── .keep                               # Header-Dateien für Projekte, die in Sprachen wie C oder C++ geschrieben sind
+├── include                                 # Header-Dateien für Projekte, die in Sprachen wie C oder C++ geschrieben sind
+│   └── .keep
 |
 ├── scripts                                 # Hilfsskripte für Build-Prozesse oder Automatisierungen
 │   └── build.sh                            # Beispielhaftes Build-Skript
-|
-├── site
-│   ├── ...                                 # Ornder "site" ist unrelevant, wird automatisiert von mkdocs erstellt und gepflegt
-│   └── ...
 |
 ├── src                                     # Enthält den Quellcode des Projekts
 │   ├── core                                # Beispiel Kernkomponenten des Frameworks
@@ -108,14 +89,13 @@ Repo-Template/
 ├── CREDITS.md                              # Erwähnt besondere Mitwirkende
 ├── LICENSE                                 # License erklärung
 ├── README.md                               # Diese README.md ist zugleich Vorlage/Template neuer Repositories
-├── mkdocs.yml                              # Konfigurations-Dateien für mkdocs, alle Dateien unter < nav: > listen
 └── requirements.txt                        # Enthält alle benötigten Abhängigkeiten, ist zugleich Vorlage/Template in neuen Repositories
 ```
 
 ---
 
 ## Documentation
-_**Alwayse update the mkdocs.yml and keep your documentation clean and structured**_
+_**Alwayse update the Wiki and keep your documentation clean and structured**_
 
 ### Core Documentation
 - [<Docs>/development](docs/developmen/contributing.md)
@@ -193,4 +173,4 @@ _**Alwayse update the mkdocs.yml and keep your documentation clean and structure
 ### Activity
 **Get your own Linkfrom [repobeats.axiom](https://repobeats.axiom.co/configs)**
 
-![Alt](https://repobeats.axiom.co/api/embed/dc4331cce08748831b617c368fcfe81c17a1c4af.svg "Repobeats analytics image")
+![Alt](https://repobeats.axiom.co/api/embed/8d1a53c73cf5523d0e52a6cc5b74bce75eecc801.svg "Repobeats analytics image")
