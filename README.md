@@ -24,7 +24,7 @@ Template for new repositories.
 ## Features
 
 ### Core Features
-- Documentation using mkdocs
+- Documentation using Github Wiki
 - File structure Template
 - README.md Template
 - LICENSE Template
