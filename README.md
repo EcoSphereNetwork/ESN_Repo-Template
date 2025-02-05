@@ -171,6 +171,6 @@ _**Alwayse update the Wiki and keep your documentation clean and structured**_
 ---
 
 ### Activity
-**Get your own Linkfrom [repobeats.axiom](https://repobeats.axiom.co/configs)**
+**Get your own Link from [repobeats.axiom](https://repobeats.axiom.co/configs)**
 
 ![Alt](https://repobeats.axiom.co/api/embed/8d1a53c73cf5523d0e52a6cc5b74bce75eecc801.svg "Repobeats analytics image")
