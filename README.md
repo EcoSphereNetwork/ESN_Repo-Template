@@ -54,11 +54,7 @@ Template for new repositories.
    cd Repo-Template.wiki
    ```
 
-4. **Copy docs/ into Wiki **
-   ```bash
-   mv Repo-Template/docs Repo-Template.wiki/docs
-   ```
-5. **Start new Repository**
+4. **Start new Repository**
    ```bash
    cd Repo-Template
    # use the Repo-T
