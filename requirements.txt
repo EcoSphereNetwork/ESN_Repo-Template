@@ -1,0 +1,5 @@
+# Repo-Template
+# Template for requirements.txt
+# AUSARBEITEN
+
+mkdocs
