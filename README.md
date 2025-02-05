@@ -40,8 +40,8 @@ Template for new repositories.
 
 4. **Start new Repository**
    ```bash
+   # use the Repo-Template file structure
    cd Repo-Template
-   # use the Repo-T
    ```
    
    ```bash
