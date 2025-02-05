@@ -21,22 +21,6 @@
 # Repo-Template
 Template for new repositories.
 
-## Features
-
-### Core Features
-- Documentation using Github Wiki
-- File structure Template
-- README.md Template
-- LICENSE Template
-- requirements.txt Template
-
-
-### Documentation using Github Wiki
-- <genauer ausführen> # genauer ausführen
-
-### README.md Template
-- <genauer ausführen> # genauer ausführen
-
 ## Quick Start
 
 1. **Prerequisites**
@@ -93,6 +77,22 @@ Repo-Template/
 ```
 
 ---
+
+## Features
+
+### Core Features
+- Documentation using Github Wiki
+- File structure Template
+- README.md Template
+- LICENSE Template
+- requirements.txt Template
+
+
+### Documentation using Github Wiki
+- <genauer ausführen> # genauer ausführen
+
+### README.md Template
+- <genauer ausführen> # genauer ausführen
 
 ## Documentation
 _**Alwayse update the Wiki and keep your documentation clean and structured**_
