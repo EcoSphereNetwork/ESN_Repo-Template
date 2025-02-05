@@ -53,8 +53,6 @@ Template for new repositories.
 ### Project Structure
 ```
 Repo-Template/
-├── docs                                    # Projektdokumentation
-|
 ├── include                                 # Header-Dateien für Projekte, die in Sprachen wie C oder C++ geschrieben sind
 │   └── .keep
 |
