@@ -31,7 +31,7 @@ Template for new repositories.
 - requirements.txt Template
 
 
-### Documentation using mkdocs
+### Documentation using Github Wiki
 - <genauer ausführen> # genauer ausführen
 
 ### README.md Template
@@ -41,25 +41,33 @@ Template for new repositories.
 
 1. **Prerequisites**
    - git
-   - python
-   - mkdocs
 
 2. **Clone Repository**
    ```bash
-   git clone https://github.com/EcoSphereNetwork/Repo-Template.git
+   git clone https://github.com/EcoSphereNetwork/Repo-Template_-new-.git
    cd Repo-Template
    ```
 
-3. **Install Dependencies**
+3. **Clone Wiki**
    ```bash
-   pip install mkdocs[all]
+   git clone https://github.com/EcoSphereNetwork/Repo-Template_-new-.wiki.git
+   cd Repo-Template.wiki
    ```
 
-4. **Start Documentation Server**
+4. **Copy docs/ into Wiki **
    ```bash
-   mkdocs serve
+   mv Repo-Template/docs Repo-Template.wiki/docs
    ```
-
+5. **Start new Repository**
+   ```bash
+   cd Repo-Template
+   # use the Repo-T
+   ```
+   
+   ```bash
+   😄...Happy coding!...⌨️
+   ```
+   
 ---
 
 ### Project Structure
