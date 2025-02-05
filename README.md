@@ -81,7 +81,6 @@ Repo-Template/
 │    │   ├── configuration.md               # 
 │    │   ├── installation.md                #
 │    │   └── quickstart.md                  # Erklärung / Schnell Einstieg
-│    ├── index.md
 │    └── templates
 │        ├── bug_report.md                  # Vorlage für bug_report
 │        ├── documentation_update.md        # Vorlage für documentation_update
