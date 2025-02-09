@@ -26,23 +26,13 @@ theme:
 
 nav:
   - Home: index.md
-  - Getting Started:
-    - Quick Start: getting-started/quickstart.md
-    - Installation: getting-started/installation.md
-    - Configuration: getting-started/configuration.md
-  - User Guide:
-    - Basic Usage: user-guide/basic-usage.md
-    - Advanced Features: user-guide/advanced-features.md
+  - Guides:
+    - Quick Start: guides/quickstart.md
+    - Repository Reorganization: guides/reorganize.md
   - Development:
-    - Contributing: development/contributing.md
-    - Code Style: development/code-style.md
-    - Testing: development/testing.md
-  - API Reference:
-    - Core API: api/core.md
-    - Utilities: api/utils.md
-  - About:
-    - Release Notes: about/changelog.md
-    - License: about/license.md
+    - Guide: development/guide.md
+  - API:
+    - Reference: api/reference.md
 
 markdown_extensions:
   - admonition
