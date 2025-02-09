@@ -1,16 +1,18 @@
-Conduct a comprehensive analysis of all GitHub repositories within the EcoSphereNetwork organization. Pay special attention to the existing Repo-Template and compare it with samschim's Test-template. Review the roadmap.md file to understand the organization's future plans and goals. Based on this analysis, propose specific improvements and updates for the EcoSphereNetwork's Repo-Template to enhance its functionality, usability, and alignment with the organization's objectives. Please include the following in your analysis and recommendations:
+Perform a comprehensive analysis of all GitHub repositories within the EcoSphereNetwork organisation. Pay particular attention to the existing repo template and compare it with the test template from Samschim. Review the roadmap.md file to get more detailed instructions and understand the plans and goals of the organisation templates. Based on this analysis, suggest specific improvements and updates to the EcoSphereNetwork repo template to improve its functionality, usability and alignment with the organisation's goals. Please include the following points in your analysis and recommendations:
 
-    Repository structure and organization within EcoSphereNetwork
-    Workflow configurations and GitHub Actions
-    Documentation quality and completeness
+    Repository structure and organisation within EcoSphereNetwork
+    Workflow configurations and GitHub actions
+    Quality and completeness of documentation
     Code style and linting configurations
     Testing frameworks and practices
     Security measures and best practices
     Contribution guidelines and processes
-    Integration with project management tools (if any)
+    Integration with project management tools (if available)
     Alignment with the goals outlined in the roadmap.md
 
-Provide specific, actionable suggestions for improving the Repo-Template, including code snippets or configuration examples where appropriate.
+Make concrete, actionable suggestions for improving the repo template, including code snippets or configuration examples if applicable.
+
+Translated with DeepL.com (free version)
 
 links:
 https://github.com/orgs/EcoSphereNetwork/repositories
