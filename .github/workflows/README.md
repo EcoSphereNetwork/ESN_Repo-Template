@@ -1,52 +1,194 @@
-Workflow options
+# Reusable GitHub Actions Workflows
 
-Change these options in the workflow .yml file to meet your GitHub project needs.
-Inputs 	Description 	Values
-on 	When the automation is ran 	issues pull_request issue_comment pull_request_target pull_request_review
-types 	The types of activity that will trigger a workflow run. 	opened, assigned, edited: See GitHub docs for more
-project 	The name of the project 	Backlog
-column 	The column to create or move the card to 	Triage
-repo-token 	The personal access token 	${{ secrets.GITHUB_TOKEN }}
-action 	This determines the type of the action to be performed on the card, Default: update 	update, delete, archive, add
-Personal access token
+This directory contains a collection of reusable GitHub Actions workflows that can be used as templates for your projects.
 
-Most of the time GITHUB_TOKEN will work as your repo-token. This requires no set up. If you have a public project board and public repository this is the option for you.
+## Available Workflows
 
-Repository project, private repository or organisation projects
+### 1. Project Automation (`reusable-project-automation.yml`)
+Handles project management automation:
+- Issue and PR triage
+- Welcome messages for first-time contributors
+- Project board automation
+- Auto-assignment of issues/PRs
 
-You will need a personal access token to send events from your issues and pull requests.
+Usage:
+```yaml
+jobs:
+  project-automation:
+    uses: ./.github/workflows/reusable-project-automation.yml
+    with:
+      project-name: 'Main Project'
+      triage-label: 'needs-review'
+      welcome-message: 'Thanks for contributing!'
+      auto-assign: true
+    secrets:
+      PROJECT_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+```
 
-    Create a personal access token
-        Public repository and repository project
-        Private repository or private project
-        Organisation project board or organisation repository
+### 2. Security Scanning (`reusable-security.yml`)
+Comprehensive security analysis:
+- CodeQL analysis
+- SAST (Static Application Security Testing)
+- Dependency vulnerability scanning
+- Container security scanning
+- Custom security issue creation
 
-    Add a secret GHPROJECT_TOKEN with the personal access token.
+Usage:
+```yaml
+jobs:
+  security:
+    uses: ./.github/workflows/reusable-security.yml
+    with:
+      languages: '["python", "javascript"]'
+      severity-level: 'high'
+      enable-dependency-scan: true
+      enable-container-scan: true
+    secrets:
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+```
 
-    Update the repo-token in the workflow .yml to reference your new token name:
+### 3. Dependency Management (`reusable-dependency-management.yml`)
+Automated dependency updates:
+- Multiple package manager support (poetry, pip, conda)
+- Scheduled updates
+- Automated PR creation
+- Optional auto-merge
+- Detailed update reports
 
-repo-token: ${{ secrets.GHPROJECT_TOKEN }}
+Usage:
+```yaml
+jobs:
+  dependencies:
+    uses: ./.github/workflows/reusable-dependency-management.yml
+    with:
+      package-manager: 'poetry'
+      update-schedule: '0 0 * * 1'
+      auto-merge: true
+      labels: 'dependencies,automated'
+    secrets:
+      RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+```
 
-Troubleshooting
+### 4. Code Quality (`reusable-code-quality.yml`)
+Comprehensive code quality checks:
+- Multi-version Python testing
+- Style checking (ruff, black)
+- Type checking (mypy)
+- Complexity analysis
+- Coverage reporting
+- Detailed quality reports
 
-GraphqlError: Resource not accessible by integration or Secrets are not currently available to forks.
+Usage:
+```yaml
+jobs:
+  quality:
+    uses: ./.github/workflows/reusable-code-quality.yml
+    with:
+      python-versions: '["3.9", "3.10", "3.11"]'
+      enable-type-check: true
+      max-complexity: 10
+      coverage-threshold: 85
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+```
 
-This error happens on repository projects and forked repositories because GITHUB_TOKEN only has read permissions. Create a personal access token following the instructions above.
+### 5. Docker Build (`reusable-docker-build.yml`)
+Container image building and publishing:
+- Multi-platform support
+- Build caching
+- Registry authentication
+- Metadata handling
+- Automated tagging
 
-Parameter token or opts.auth is required
+Usage:
+```yaml
+jobs:
+  build:
+    uses: ./.github/workflows/reusable-docker-build.yml
+    with:
+      image-name: 'myorg/myapp'
+      platforms: 'linux/amd64,linux/arm64'
+      push: true
+    secrets:
+      REGISTRY_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      REGISTRY_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+```
 
-This error happens when using a personal access token to run the workflow on PRs from forked repositories. This is because GitHub secrets are not populated for workflows triggered by forks. Use pull_request_target as the webhook event instead to enable access to secrets.
+### 6. Deployment (`reusable-deploy.yml`)
+Flexible deployment automation:
+- Multiple deployment methods
+- Infrastructure as Code support
+- Cloud provider integration
+- Environment management
+- Deployment verification
 
-SAML enforcement
+Usage:
+```yaml
+jobs:
+  deploy:
+    uses: ./.github/workflows/reusable-deploy.yml
+    with:
+      environment: 'production'
+      use-terraform: true
+      terraform-workspace: 'prod'
+    secrets:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+```
 
-With certain organisations there may be SAML enforcement. This means you will need to Enable SSO when you create the personal access token.
+## Required Secrets
 
-GraphqlError: Resource protected by organization SAML enforcement. You must grant your personal token access to this organization
+Configure these secrets based on the workflows you use:
 
-Can't read repository null
+1. `GITHUB_TOKEN`: Automatically provided by GitHub
+2. `PROJECT_TOKEN`: For project board operations
+3. `SNYK_TOKEN`: For Snyk security scanning
+4. `SONAR_TOKEN`: For SonarCloud analysis
+5. `CODECOV_TOKEN`: For coverage reporting
+6. `RENOVATE_TOKEN`: For dependency updates
+7. `AWS_ACCESS_KEY_ID` & `AWS_SECRET_ACCESS_KEY`: For AWS deployments
+8. `DOCKER_USERNAME` & `DOCKER_PASSWORD`: For container registry
 
-Make sure your permissions for your personal access token are correctly configured. Follow the above guide on permissions.
+## Best Practices
 
-Private repositories
+1. **Workflow Selection**
+   - Choose only the workflows you need
+   - Customize inputs based on your requirements
+   - Keep workflows modular and focused
 
-You may need to enable policy settings to allow running workflows from forks. Please refer to GitHub's documentation to learn about enabling these settings at enterprise, organization, or repository level.
+2. **Security**
+   - Store sensitive data in secrets
+   - Use environment protection rules
+   - Enable required status checks
+   - Implement branch protection
+
+3. **Maintenance**
+   - Regularly update workflow versions
+   - Monitor workflow execution times
+   - Review and adjust thresholds
+   - Keep dependencies updated
+
+4. **Testing**
+   - Test workflows in a fork first
+   - Use matrix testing when possible
+   - Set appropriate timeouts
+   - Enable detailed logging when needed
+
+## Troubleshooting
+
+1. **Permission Issues**
+   - Check workflow permissions in repository settings
+   - Verify secret availability
+   - Review token scopes
+
+2. **Fork Considerations**
+   - Use `pull_request_target` for fork access to secrets
+   - Enable fork workflow settings
+   - Configure appropriate permissions
+
+3. **Performance**
+   - Use build caching
+   - Implement matrix job strategies
+   - Optimize job dependencies
+   - Monitor execution times
