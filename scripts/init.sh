@@ -24,12 +24,24 @@ warning() {
     echo -e "${YELLOW}Warning:${NC} $1"
 }
 
-# Check if running from the correct directory
-if [[ ! -f "scripts/init.sh" ]]; then
-    error "Please run this script from the root directory of the project"
-fi
+# Get script directory and paths
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+TEMPLATE_DIR="$( dirname "$SCRIPT_DIR" )"
+TARGET_DIR="$PWD"
+
+# Copy template files to target directory
+print_step "Copying template files..."
+cp -r "$TEMPLATE_DIR"/* "$TARGET_DIR/"
+cp "$TEMPLATE_DIR"/.* "$TARGET_DIR/" 2>/dev/null || true
+
+# Change to target directory
+cd "$TARGET_DIR"
 
 print_step "Initializing new project from template..."
+
+# Initialize Git repository
+print_step "Initializing Git repository..."
+git init
 
 # Get project information
 read -p "Enter project name (lowercase, hyphens only): " PROJECT_NAME
@@ -60,6 +72,18 @@ sed -i "s/A modern, comprehensive template for creating new repositories within 
 # Create virtual environment and install dependencies
 print_step "Setting up Python environment..."
 
+# Install pip if not available
+if ! command -v pip3 &> /dev/null; then
+    print_step "Installing pip..."
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    python3 get-pip.py --user
+    rm get-pip.py
+fi
+
+# Install required packages
+print_step "Installing required packages..."
+python3 -m pip install toml pyyaml rich click
+
 # Check if Poetry is installed
 if ! command -v poetry &> /dev/null; then
     print_step "Installing Poetry..."
@@ -69,6 +93,13 @@ fi
 # Install dependencies
 print_step "Installing project dependencies..."
 poetry install
+
+# Create poetry shell script
+cat > poetry-shell.sh << 'EOF'
+#!/bin/bash
+poetry shell
+EOF
+chmod +x poetry-shell.sh
 
 # Initialize pre-commit
 print_step "Setting up pre-commit hooks..."
@@ -84,13 +115,10 @@ if [[ ! -f ".env" ]] && [[ -f ".env.example" ]]; then
     cp .env.example .env
 fi
 
-# Initialize Git repository if not already initialized
-if [[ ! -d ".git" ]]; then
-    print_step "Initializing Git repository..."
-    git init
-    git add .
-    git commit -m "feat: initial project setup from template"
-fi
+# Commit initial changes
+print_step "Committing initial changes..."
+git add .
+git commit -m "feat: initial project setup from template"
 
 # Clean up template-specific files
 print_step "Cleaning up template files..."
@@ -99,18 +127,27 @@ rm -f CREDITS.md
 
 # Create initial test files
 print_step "Creating initial test files..."
-cat > tests/unit/test_example.py << 'EOF'
-def test_example():
+cat > tests/unit/test_unit.py << 'EOF'
+"""Unit tests for the project."""
+
+def test_unit_example():
+    """Basic unit test example."""
     assert True
 EOF
 
-cat > tests/integration/test_example.py << 'EOF'
+cat > tests/integration/test_integration.py << 'EOF'
+"""Integration tests for the project."""
+
 def test_integration_example():
+    """Basic integration test example."""
     assert True
 EOF
 
-cat > tests/e2e/test_example.py << 'EOF'
+cat > tests/e2e/test_e2e.py << 'EOF'
+"""End-to-end tests for the project."""
+
 def test_e2e_example():
+    """Basic end-to-end test example."""
     assert True
 EOF
 
