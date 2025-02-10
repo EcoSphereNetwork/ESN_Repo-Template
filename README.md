@@ -30,7 +30,7 @@
 - [License](#-license)
 
 ## 🎯 About
-The EcoSphere Network Repository Template provides a standardized starting point for new projects, incorporating modern development practices, comprehensive workflows, and essential tooling. This template is designed to accelerate project setup while ensuring consistency across the EcoSphere Network ecosystem.
+The EcoSphere Network Repository Template provides a standardized starting point for new projects, incorporating modern development practices, comprehensive workflows, and essential tooling. This template is designed to accelerate project setup while ensuring consistency across the *ESN* ecosystem.
 
 ### Why Use This Template?
 - 🚀 **Quick Start**: Get your project running in minutes with pre-configured tooling
