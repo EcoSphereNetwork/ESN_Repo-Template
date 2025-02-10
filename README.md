@@ -66,17 +66,19 @@ The EcoSphere Network Repository Template provides a standardized starting point
 1. **Create a New Repository**
    ```bash
    gh repo create my-project --template EcoSphereNetwork/ESN-Repo-Template
-   # or
+   ```
+   or
+    ```bash
    git clone https://github.com/EcoSphereNetwork/ESN_Repo-Template.git my-project
    ```
 
-2. **Initialize the Project**
+3. **Initialize the Project**
    ```bash
    cd my-project
    ./scripts/init.sh  # Initializes project configuration
    ```
 
-3. **Set Up Development Environment**
+4. **Set Up Development Environment**
    ```bash
    poetry install  # Install dependencies
    pre-commit install  # Set up git hooks
