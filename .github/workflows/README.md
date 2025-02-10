@@ -143,10 +143,10 @@ Configure these secrets based on the workflows you use:
 
 1. `GITHUB_TOKEN`: Automatically provided by GitHub
 2. `PROJECT_TOKEN`: For project board operations
-3. `SNYK_TOKEN`: For Snyk security scanning
-4. `SONAR_TOKEN`: For SonarCloud analysis
-5. `CODECOV_TOKEN`: For coverage reporting
-6. `RENOVATE_TOKEN`: For dependency updates
+3. `SNYK_TOKEN`: For [Snyk](https://app.snyk.io/login) security scanning
+4. `SONAR_TOKEN`: For [SonarCloud](https://www.sonarsource.com/products/sonarcloud/signup-free/) analysis
+5. `CODECOV_TOKEN`: For [Codecov](https://about.codecov.io/codecov-free-trial/) coverage reporting
+6. `RENOVATE_TOKEN`: For [Renovate](https://github.com/marketplace/renovate) dependency updates 
 7. `AWS_ACCESS_KEY_ID` & `AWS_SECRET_ACCESS_KEY`: For AWS deployments
 8. `DOCKER_USERNAME` & `DOCKER_PASSWORD`: For container registry
 
