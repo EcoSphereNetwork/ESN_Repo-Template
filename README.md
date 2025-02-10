@@ -12,9 +12,9 @@
   [![Documentation][docs-shield]][docs-url]
   [![Project Credits][credits-shield]][credits-url]
 
-  [View Demo](https://github.com/EcoSphereNetwork/Repo-Template_-new-/wiki/demo) •
-  [Report Bug](https://github.com/EcoSphereNetwork/Repo-Template_-new-/issues) •
-  [Request Feature](https://github.com/EcoSphereNetwork/Repo-Template_-new-/issues)
+  [View Demo](https://github.com/EcoSphereNetwork/ESN_Repo-Template/wiki/demo) •
+  [Report Bug](https://github.com/EcoSphereNetwork/ESN_Repo-Template/issues) •
+  [Request Feature](https://github.com/EcoSphereNetwork/ESN_Repo-Template/issues)
 </div>
 
 ## 📋 Table of Contents
@@ -65,9 +65,9 @@ The EcoSphere Network Repository Template provides a standardized starting point
 
 1. **Create a New Repository**
    ```bash
-   gh repo create my-project --template EcoSphereNetwork/Repo-Template_-new-
+   gh repo create my-project --template EcoSphereNetwork/ESN-Repo-Template
    # or
-   git clone https://github.com/EcoSphereNetwork/Repo-Template_-new-.git my-project
+   git clone https://github.com/EcoSphereNetwork/ESN_Repo-Template.git my-project
    ```
 
 2. **Initialize the Project**
@@ -173,8 +173,8 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ## 💬 Support
 
-- [Issue Tracker](https://github.com/EcoSphereNetwork/Repo-Template_-new-/issues)
-- [Discussions](https://github.com/EcoSphereNetwork/Repo-Template_-new-/discussions)
+- [Issue Tracker](https://github.com/EcoSphereNetwork/ESN_Repo-Template.git/issues)
+- [Discussions](https://github.com/EcoSphereNetwork/ESN_Repo-Template.git/discussions)
 - [Discord Community][discord-url]
 - [Documentation][docs-url]
 
@@ -193,19 +193,19 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 </div>
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/EcoSphereNetwork/Repo-Template_-new-?style=for-the-badge&color=blue
-[contributors-url]: https://github.com/EcoSphereNetwork/Repo-Template_-new-/graphs/contributors
-[stars-shield]: https://img.shields.io/github/stars/EcoSphereNetwork/Repo-Template_-new-?style=for-the-badge&color=blue
-[stars-url]: https://github.com/EcoSphereNetwork/Repo-Template_-new-/stargazers
-[coverage-shield]: https://img.shields.io/codecov/c/github/EcoSphereNetwork/Repo-Template_-new-?style=for-the-badge&color=blue
-[coverage-url]: https://codecov.io/github/EcoSphereNetwork/Repo-Template_-new-
-[license-shield]: https://img.shields.io/github/license/EcoSphereNetwork/Repo-Template_-new-?style=for-the-badge&color=blue
-[license-url]: https://github.com/EcoSphereNetwork/Repo-Template_-new-/blob/main/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/EcoSphereNetwork/ESN_Repo-Template?style=for-the-badge&color=blue
+[contributors-url]: https://github.com/EcoSphereNetwork/ESN_Repo-Template/graphs/contributors
+[stars-shield]: https://img.shields.io/github/stars/EcoSphereNetwork/ESN_Repo-Template?style=for-the-badge&color=blue
+[stars-url]: https://github.com/EcoSphereNetwork/ESN_Repo-Template/stargazers
+[coverage-shield]: https://img.shields.io/codecov/c/github/EcoSphereNetwork/ESN_Repo-Template?style=for-the-badge&color=blue
+[coverage-url]: https://codecov.io/github/EcoSphereNetwork/ESN_Repo-Template
+[license-shield]: https://img.shields.io/github/license/EcoSphereNetwork/ESN_Repo-Template?style=for-the-badge&color=blue
+[license-url]: https://github.com/EcoSphereNetwork/ESN_Repo-Template/blob/main/LICENSE
 [discord-shield]: https://img.shields.io/badge/Discord-Join%20Us-purple?logo=discord&logoColor=white&style=for-the-badge
 [discord-url]: https://discord.gg/cTWBHGkn
 [docs-shield]: https://img.shields.io/badge/Documentation-000?logo=googledocs&logoColor=FFE165&style=for-the-badge
-[docs-url]: https://github.com/EcoSphereNetwork/Repo-Template_-new-/wiki
+[docs-url]: https://github.com/EcoSphereNetwork/ESN_Repo-Template/wiki
 [credits-shield]: https://img.shields.io/badge/Project-Credits-blue?style=for-the-badge&color=FFE165&logo=github&logoColor=white
-[credits-url]: https://github.com/EcoSphereNetwork/Repo-Template_-new-/blob/main/CREDITS.md
+[credits-url]: https://github.com/EcoSphereNetwork/ESN_Repo-Template/blob/main/CREDITS.md
 [activity-graph]: https://repobeats.axiom.co/api/embed/8d1a53c73cf5523d0e52a6cc5b74bce75eecc801.svg
 [activity-url]: https://repobeats.axiom.co
