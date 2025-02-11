@@ -137,6 +137,37 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 ```
 
+### 7. Create Issue on Workflow Failure (create-issue-on-failure.yml)
+Handles the automatic creation of GitHub issues when a workflow fails. This workflow ensures that any failed workflow is documented as an issue in the repository for easy tracking and resolution.
+Features:
+
+- Detects failed workflows.
+- Automatically creates an issue with details of the failure.
+- Includes failure metadata like workflow name, run ID, and commit information.
+
+
+Usage:
+```yaml
+jobs:
+  create-issue:
+    uses: ./.github/workflows/create-issue-on-failure.yml
+    with:
+      issue-title: '[Workflow Failure] ${{ github.workflow }}'
+      issue-body: |
+        ## Workflow Failure Details
+        - **Workflow Name**: ${{ github.workflow }}
+        - **Run ID**: ${{ github.run_id }}
+        - **Commit**: ${{ github.sha }}
+        - **Branch**: ${{ github.ref }}
+        - **Triggered By**: @${{ github.actor }}
+        
+        [View Logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+      labels: 'failure, automation'
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+```
+
 ## Required Secrets
 
 Configure these secrets based on the workflows you use:
